@@ -13,7 +13,7 @@ arggroup.add_argument('-v', '--verbose', action='store_true', default=False,
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        'Preview the contents of an HDF5 file',
+        description='Preview the contents of an HDF5 file',
         parents=[arguments]
     )
     parser.add_argument('fin', nargs='+', help='The input HDF5 files.')

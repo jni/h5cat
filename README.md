@@ -28,6 +28,53 @@ to to your shell path.
 
 Run `h5cat -h` for a helpful message.
 
-Here are a couple of examples to get you started:
+Here are a couple of examples to get you started.
 
+By default, `h5cat` gives you the shape and type of every dataset in an
+HDF5 file.
+```
+$ h5cat single-channel-tr[0-3]-0-0.00.lzf.h5
+>>> single-channel-tr1-0-0.00.lzf.h5
 
+    stack
+      shape:  (250, 250, 250) 
+      type:  int32
+
+    vi
+      shape:  (3, 1) 
+      type:  float64
+>>> single-channel-tr2-0-0.00.lzf.h5
+
+    stack
+      shape:  (250, 250, 250) 
+      type:  int32
+
+    vi
+      shape:  (3, 1) 
+      type:  float64
+>>> single-channel-tr3-0-0.00.lzf.h5
+
+    stack
+      shape:  (250, 250, 250) 
+      type:  int32
+
+    vi
+      shape:  (3, 1) 
+      type:  float64
+```
+
+If you want more details, use `-v` or `--verbose` to get a printout of the
+array. For large arrays this will be `...`ed to show only the edges of the
+array as can be fit on screen. Use `-g` or `--group` to display only a
+specific group of the `.h5` file.
+```
+$ h5cat -v -g vi single-channel-tr3-0-0.00.lzf.h5
+>>> single-channel-tr3-0-0.00.lzf.h5
+
+    vi
+      shape:  (3, 1) 
+      type:  float64
+[[ 0.        ]
+ [ 0.06224902]
+ [ 2.23062383]]
+```

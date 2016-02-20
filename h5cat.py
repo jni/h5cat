@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from __future__ import absolute_import
+from __future__ import print_function
 import argparse
 import h5py
 from numpy import array
@@ -21,7 +23,7 @@ def main():
 
     args = parser.parse_args()
     for fin in args.fin:
-        print '>>>', fin
+        print('>>>', fin)
         f = h5py.File(fin, 'r')
         if args.group is not None:
             groups = [args.group]
@@ -29,13 +31,13 @@ def main():
             groups = []
             f.visit(groups.append)
         for g in groups:
-            print '\n   ', g
+            print('\n   ', g)
             if type(f[g]) == h5py.highlevel.Dataset:
                 a = f[g]
-                print '      shape: ', a.shape, '\n      type: ', a.dtype
+                print('      shape: ', a.shape, '\n      type: ', a.dtype)
                 if args.verbose:
                     a = array(f[g])
-                    print a
+                    print(a)
 
 
 if __name__ == '__main__':

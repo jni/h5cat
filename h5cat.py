@@ -32,7 +32,7 @@ def main():
             f.visit(groups.append)
         for g in groups:
             print('\n   ', g)
-            if type(f[g]) == h5py.highlevel.Dataset:
+            if type(f[g]) == h5py.Dataset:
                 a = f[g]
                 print('      shape: ', a.shape, '\n      type: ', a.dtype)
                 if args.verbose:

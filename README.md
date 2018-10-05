@@ -6,6 +6,12 @@ It is designed to be used in situations where
 It is distributed under the open-source 
 [MIT license](http://www.opensource.org/licenses/mit-license.php).
 
+# NOTE: h5cat is no longer maintained
+
+See the excellent `h5glance` for a more modern replacement:
+
+https://pypi.org/project/h5glance/#description
+
 ## Requirements (tested versions)
 
 * Python 2.7, 3.5+
